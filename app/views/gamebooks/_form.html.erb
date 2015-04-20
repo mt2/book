@@ -1,0 +1,29 @@
+<%= form_for(@gamebook) do |f| %>
+  <% if @gamebook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gamebook.errors.count, "error") %> prohibited this gamebook from being saved:</h2>
+
+      <ul>
+      <% @gamebook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :isbn %><br>
+    <%= f.text_field :isbn %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

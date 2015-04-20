@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gamebooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Isbn</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gamebooks.each do |gamebook| %>
+      <tr>
+        <td><%= gamebook.isbn %></td>
+        <td><%= gamebook.title %></td>
+        <td><%= gamebook.price %></td>
+        <td><%= link_to 'Show', gamebook %></td>
+        <td><%= link_to 'Edit', edit_gamebook_path(gamebook) %></td>
+        <td><%= link_to 'Destroy', gamebook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gamebook', new_gamebook_path %>

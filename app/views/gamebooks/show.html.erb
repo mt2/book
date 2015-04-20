@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @gamebook.isbn %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gamebook.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @gamebook.price %>
+</p>
+
+<%= link_to 'Edit', edit_gamebook_path(@gamebook) %> |
+<%= link_to 'Back', gamebooks_path %>
